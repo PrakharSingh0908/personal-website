@@ -2,6 +2,7 @@
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
+import Inspirations from "@/components/Inspirations.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
 
 const MAX_POSTS = 10;
@@ -61,7 +62,7 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 			awesome builders at <a class="cactus-link" href=https://sdslabs.co/ rel="noopener noreferrer" target="_blank">SDSLabs</a>, 
 			a tech club that is focused on building some amazing and exciting products.<br>
 			<p>
-				Before this, I designed and developed some kick-ass projects.
+				Currently, I am designing brand strategy for the <a class="cactus-link" href=https://www.noon.com/uae-en/ rel="noopener noreferrer" target="_blank">Noon</a>(Biggest e-commerce player in the Middle-East). Before this, I designed and developed some kick-ass projects.
 			</p>
 			<br/>
 			<p>
@@ -71,6 +72,9 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 			<br/>
 		</p>
 		<SocialList />
+	</section>
+	<section  class="mt-16">
+		<Inspirations/>
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
 		<h2 class="title mb-4 text-xl">Posts</h2>
