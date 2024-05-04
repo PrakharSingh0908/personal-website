@@ -13,6 +13,9 @@
 		--theme-accent: 351deg 66% 48%;
 		--theme-accent-2: 0deg 0% 7%;
 		--theme-quote: 351deg 66% 48%;
+		::selection{
+			background: rgba(110, 233, 57, 0.31);
+		}
 	}
 
 	:root[data-theme="dark"] {
@@ -23,11 +26,12 @@
 		--theme-accent: 159deg 64% 45%;
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
+		::selection{
+			background: rgba(81, 241, 12, 0.177);
+		}
 	}
 
-	::selection{
-		background: rgba(99, 206, 53, 0.251);
-	}
+
 
 	html {
 		@apply scroll-smooth;
