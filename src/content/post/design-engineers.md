@@ -18,50 +18,22 @@ The idea of design engineers branched out from the OG quote and now has became t
 
 -Robert A. Heinlein
 
-## The tech world takes notice
+## Into the tech world
 
-Your going to have to create a couple of accounts to get things up-and-running. But, the first thing you need to ensure is that your social links are correct.
+One of the tweets that I profoundly cherish on twitter is this one-
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Build good relationships with your fellow developers, they can help you to become a sr designer 👇<a href="https://t.co/GAVTujnfIa">https://t.co/GAVTujnfIa</a><a href="https://t.co/08iRaPQaUY">https://t.co/08iRaPQaUY</a> <a href="https://t.co/jbIK7EKhUa">https://t.co/jbIK7EKhUa</a> <a href="https://t.co/fLMzO3a1jD">pic.twitter.com/fLMzO3a1jD</a></p>&mdash; Joshua Guo (@JoshGuoDesign) <a href="https://twitter.com/JoshGuoDesign/status/1724249311397966092?ref_src=twsrc%5Etfw">November 14, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-### Add link(s) to your profile(s)
+This is such a great example of having a complete view of the process of building top quality digital experiences and interfaces. Imagine writing a great tagline for your next landing page, giving it inner shadows, fancy animations. Only to find out you have weird "orphans" in the production version.
 
-Firstly, you need to add a link on your site to prove ownership. If you have a look at [IndieLogin's](https://indielogin.com/setup) instructions, it gives you 2 options, either an email address and/or GitHub account. I've created the component `src/components/SocialList.astro` where you can add your details into the `socialLinks` array, just include the `isWebmention` property to the relevant link which will add the `rel="me authn"` attribute. Whichever way you do it, make sure you have a link in your markup as per IndieLogin's [instructions](https://indielogin.com/setup)
+You explain this to your frontend engineer, at first your engineer has a hard time understanding what's wrong, everything looks good, CSS code is just as the design file, all animations works properly. But that bloody weird "orphan", as a designer you just can't wrap your head around it. You wish there was a solution. But your engineer `coming from a pure technical background` says it's too knit-picking and what you want is just not technically possible. So you `coming from pure design background` accept it the way it is.
 
-```html
-<a href="https://github.com/your-username" rel="me">GitHub</a>
-```
+## But why design engineers?
 
-### Sign up to Webmention.io
+`Case - 1`
+Well technically if your designers are great enough to know the inner workings of software development, and vice-versa with developers, GREAT you don't need design engineers. You have an all-star product team that many companies wish for.
 
-Next, head over to [Webmention.io](https://webmention.io/) and create an account by signing in with your domain name, e.g. `https://astro-cactus.chriswilliams.dev/`. Please note that .app TLDs don't function correctly. Once in, it will give you a couple of links for your domain to accept webmentions. Make a note of these and head over to `src/site.config.ts` and add them to `siteConfig.webmentions`.
+`Case - 2`
+But if that's not the case with your team, believe me you are going to have a hard time shipping great products. Also, Welcome to the great world of mediocrity. Where two teams work exactly fine but something's not right when their works merge together.
 
-Quick note: You don't have to include the pingback link. Maybe coincidentally, but after adding it I started to receive a higher frequency of spam in my mailbox, informing me that my website could be better. Tbh they're not wrong. I've now removed it, but it's up to you.
-
-### Adding your api key
-
-Next is to add your api key, also from [Webmention.io](https://webmention.io/), to a `.env` file. Rename the `.example.env`, or create your own, with `WEBMENTION_API_KEY=` and then your personal key. Please try not to publish this to a repository!
-
-### Sign up to Brid.gy
-
-You're now going to have to use [brid.gy](https://brid.gy/). As the name suggests, it links your website to your social media accounts. For every account you want to set up (e.g. Mastodon), click on the relevant button and connect each account you want brid.gy to search. Just to note again, brid.gy currently has an issue with .app TLDs.
-
-## Testing everything works
-
-With everything set, it's now time to build and publish your website. **REMEMBER** to set your environment variable `WEBMENTION_API_KEY` with your host, I also forgot this part.
-
-You can check to see if everything is working by sending a test webmention via [webmentions.rocks](https://webmention.rocks/receive/1). Log in with your domain, enter the auth code, and then the url of the page you want to test. For example, to test this page I would add `https://astro-cactus.chriswilliams.dev/posts/webmentions/`. To view it on your website, rebuild or (re)start dev mode locally, and you should see the result at the bottom of your page.
-
-You can also view any test mentions in the browser via their [api](https://github.com/aaronpk/webmention.io#api).
-
-## Things to add, things to consider
-
-- At the moment, fresh webmentions are only fetched on a rebuild or restarting dev mode, which obviously means if you don't update your site very often you wont get a lot of new content. It should be quite trivial to add a cron job to run the `getAndCacheWebmentions()` function in `src/utils/webmentions.ts` and populate your blog with new content. This is probably what I'll add next as a github action.
-
-- I have seen some mentions have duplicates. Unfortunately, they're quite difficult to filter out as they have different id's.
-
-- I'm not a huge fan of the little external link icon for linking to comments/replies. It's not particularly great on mobile due to its size, and will likely change it in the future.
-
-## Acknowledgements
-
-Many thanks to [Kieran McGuire](https://github.com/chrismwilliams/astro-theme-cactus/issues/107#issue-1863931105) for sharing this with me, and the helpful posts. I'd never heard of webmentions before, and now with this update hopefully others will be able to make use of them. Additionally, articles and examples from [kld](https://kld.dev/adding-webmentions/) and [ryanmulligan.dev](https://ryanmulligan.dev/blog/) really helped in getting this set up and integrated, both a great resource if you're looking for more information!
+This is a short digestible definition of design engineers, they serve as the binding glue between the design and technical team. Believe me it all sounds made up until you start seeing the impact of a design engineer, by directly corelating it with the quality of products being shipped.
