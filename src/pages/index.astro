@@ -2,8 +2,9 @@
 import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
-import Inspirations from "@/components/Inspirations.astro";
+// import Inspirations from "@/components/Inspirations.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
+
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
@@ -54,44 +55,46 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
+	<section id="content-body" class="opacity-0 blur-sm">
 		<h1 class="title mb-6 text-xl">नमस्ते / Hello</h1>
-		<p class="mb-4">
-			Hey, I'm Prakhar. I'm a designer, interaction developer and a techno-bullish writer. 
-			I'm currently pursuing bachelors at IIT Roorkee while also building the design foundation of the <a class="cactus-link" href=https://zk.email/ rel="noopener noreferrer" target="_blank">zkemail</a> ecosystem.
-			<h3 class="title mt-8 mb-4 text-xl"> Side Quests</h3>
-			<p>
-				<h3 class="title mb-2 text-sm"> SDSLabs Joint Secretary</h3>
-				Additionally, I also serve as the Joint Secretary and Head of Design of a tech club called <a class="cactus-link" href=https://sdslabs.co/ rel="noopener noreferrer" target="_blank">SDSLabs</a>, 
-				here, I lead and learn from the smartest technological builders of IIT R.
+		<div>
+			<p class="mb-4">
+				Hey, I'm Prakhar. I'm a designer, interaction developer and a techno-bullish writer. 
+				I'm currently pursuing bachelors at IIT Roorkee while also building the design foundation of the <a class="cactus-link" href=https://zk.email/ rel="noopener noreferrer" target="_blank">zkemail</a> ecosystem.
+				<h3 class="title mt-8 mb-4 text-xl"> Side Quests</h3>
+				<p>
+					<h3 class="title mb-2 text-sm"> SDSLabs Joint Secretary</h3>
+					Additionally, I also serve as the Joint Secretary and Head of Design of a tech club called <a class="cactus-link" href=https://sdslabs.co/ rel="noopener noreferrer" target="_blank">SDSLabs</a>, 
+					here, I lead and learn from the smartest technological builders of IIT R.
+				</p>
+				<p>
+					<h3 class="title mt-4 mb-2 text-sm"> Evolve Network Design Advisor</h3>
+					I have also recently joined the design advisory board for <a class="cactus-link" href=https://evolvenetwork.ai/ rel="noopener noreferrer" target="_blank">Evolve Network</a>, where I will guide them build the next generation AI
+					products through world class user experience.
+				</p>
+				<p>
+					<h3 class="title mt-4 mb-2 text-sm"> Figma Plugins</h3>
+					I also build Figma plugins in my free time, one such plugin is <a class="cactus-link" href=https://www.figma.com/community/plugin/1359544579535199060/auto-pager rel="noopener noreferrer" target="_blank">Auto Pager</a>,
+					which helps users to streamline documentation. Also, 2 more plugins are in production with release dates in the near foreseeable future.
+				</p>
+				<h3 class="title mt-8 mb-4 text-xl"> Past Lives</h3>
+				<p>
+					<h3 class="title mb-2 text-sm"> Noon Dubai [May'24 - Aug'24] - Design Intern </h3>
+					I previously worked at <a class="cactus-link" href=https://www.noon.com/uae-en/ rel="noopener noreferrer" target="_blank">Noon</a>(Biggest e-commerce player in the Middle-East), where I was the first design intern hire. 
+					I still cherish the vivid memories of impacting millions of life, at scale, through my work there.
+				</p>
+				<p>
+					<h3 class="title mt-4 mb-2 text-sm"> Zetpay [Sept'23 - Jan'24] - Cofounder and Head of Design </h3>
+					I also tried my hand at building a tech team from scratch.  At Zetpay, I built the complete design foundation. We ultimately grew our team to 7 and demonstrated real-life usecase of UPI for non-Indians.
+				</p>
+				<p class="mt-4">
+					Before all this, I designed and developed some kick-ass projects. If you are someone who is interested into my design works <a class="cactus-link" href=https://prakharsingh.framer.website/ rel="noopener noreferrer" target="_blank">this is for you folks.
+					</a>
+				</p>
+				<br/>
 			</p>
-			<p>
-				<h3 class="title mt-4 mb-2 text-sm"> Evolve Network Design Advisor</h3>
-				I have also recently joined the design advisory board for <a class="cactus-link" href=https://evolvenetwork.ai/ rel="noopener noreferrer" target="_blank">Evolve Network</a>, where I will guide them build the next generation AI
-				products through world class user experience.
-			</p>
-			<p>
-				<h3 class="title mt-4 mb-2 text-sm"> Figma Plugins</h3>
-				I also build Figma plugins in my free time, one such plugin is <a class="cactus-link" href=https://www.figma.com/community/plugin/1359544579535199060/auto-pager rel="noopener noreferrer" target="_blank">Auto Pager</a>,
-				which helps users to streamline documentation. Also, 2 more plugins are in production with release dates in the near foreseeable future.
-			</p>
-			<h3 class="title mt-8 mb-4 text-xl"> Past Lives</h3>
-			<p>
-				<h3 class="title mb-2 text-sm"> Noon Dubai [May'24 - Aug'24] - Design Intern </h3>
-				I previously worked at <a class="cactus-link" href=https://www.noon.com/uae-en/ rel="noopener noreferrer" target="_blank">Noon</a>(Biggest e-commerce player in the Middle-East), where I was the first design intern hire. 
-				I still cherish the vivid memories of impacting millions of life, at scale, through my work there.
-			</p>
-			<p>
-				<h3 class="title mt-4 mb-2 text-sm"> Zetpay [Sept'23 - Jan'24] - Cofounder and Head of Design </h3>
-				I also tried my hand at building a tech team from scratch.  At Zetpay, I built the complete design foundation. We ultimately grew our team to 7 and demonstrated real-life usecase of UPI for non-Indians.
-			</p>
-			<p class="mt-4">
-				Before all this, I designed and developed some kick-ass projects. If you are someone who is interested into my design works <a class="cactus-link" href=https://prakharsingh.framer.website/ rel="noopener noreferrer" target="_blank">this is for you folks.
-				</a>
-			</p>
-			<br/>
-		</p>
-		<SocialList />
+			<SocialList />
+		</div>
 	</section>
 	{/* <section  class="mt-16">
 		<Inspirations/>
@@ -129,3 +132,18 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 		</dl>
 	</section> */}
 </PageLayout>
+
+<script>
+	import { animate } from "motion";
+
+	animate(document.querySelector("#content-body") as HTMLElement,
+		{ 
+			opacity: [0, 1],
+			filter: ["blur(12px)", "blur(0px)"]
+		}, 
+		{ 
+			duration: 1,
+			easing: "ease-in"
+		}
+	);
+</script>
