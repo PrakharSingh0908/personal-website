@@ -4,6 +4,7 @@ import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
 
+
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
@@ -70,3 +71,18 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		</section>
 	</div>
 </PageLayout>
+
+<!-- <script>
+	import { animate } from "motion";
+
+	animate(document.querySelector("#content-body") as HTMLElement,
+		{ 
+			opacity: [0, 1],
+			filter: ["blur(12px)", "blur(0px)"]
+		}, 
+		{ 
+			duration: 1,
+			easing: "ease-in"
+		}
+	);
+</script> -->
