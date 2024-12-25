@@ -3,6 +3,7 @@ import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
+import 'rough-notation/lib/rough-notation.iife.js';
 
 
 const MAX_POSTS = 10;
@@ -10,10 +11,31 @@ const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
 ---
+<style>
+  .blur-load {
+    animation: fadeUpBlur 1.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(120px);
+  }
+
+  @keyframes fadeUpBlur {
+    0% {
+      opacity: 0;
+      filter: blur(20px);
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0);
+    }
+  }
+  </style>
 
 <PageLayout meta={{ title: "Home" }}>
 	<div class="mx-auto max-w-4xl sm:p-6 sm:border sm:border-neutral-400/20 sm:rounded-lg sm:shadow-md">
-		<section>
+		<section class="blur-load">
 			<h1 class="title mb-6 text-xl">नमस्ते / Hello</h1>
 			<p class="mb-4">
 				Hey, I'm Prakhar. I'm a designer, interaction developer and a techno-bullish writer. 
@@ -30,7 +52,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 						here, I lead and learn from the smartest technological builders of IIT R.
 					</div>
 				</p>
-				<p>
+				<!-- <p>
 					<div class="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center w-full">
 						<div class="title text-sm">Evolve Network Design Advisor</div>
 						<div class="text-textColor/60 mt-1 sm:mt-0">Oct'24 - Ongoing</div>
@@ -39,11 +61,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 						I have also recently joined the design advisory board for <a class="cactus-link" href=https://evolvenetwork.ai/ rel="noopener noreferrer" target="_blank">Evolve network</a>, where I guide them build the next generation AI
 						products through world class user experience.
 					</div>
-				</p>
+				</p> -->
 				<p>
 					<div class="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center w-full">
 						<div class="title text-sm">Figma Plugins</div>
-						<div class="text-textColor/60 mt-1 sm:mt-0">Some weekends</div>
+						<div class="text-textColor/60 mt-1 sm:mt-0">Some weekends/night</div>
 					</div>
 					<div class="mt-2">
 					I also build Figma plugins in my free time, one such plugin is <a class="cactus-link" href=https://www.figma.com/community/plugin/1359544579535199060/auto-pager rel="noopener noreferrer" target="_blank">Auto Pager</a>,
@@ -72,7 +94,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 					</div>
 				</p>
 				<p class="mt-6">
-					Before all this, I designed and developed some kick-ass projects. If you are someone who is interested into my design works <a class="cactus-link" href=https://prakharsingh.framer.website/ rel="noopener noreferrer" target="_blank">this is for you folks.
+					Before all this, I designed and developed some kick-ass projects. If you are someone who is interested into my design works 
+					<a class="cactus-link" href="https://prakharsingh.framer.website/" rel="noopener noreferrer" target="_blank">
+						this is for you folks.
 					</a>
 				</p>
 				<br/>
@@ -83,16 +107,33 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			<Inspirations/>
 		</section> */}
 		<section aria-label="Blog post list" class="mt-16">
-			<h2 class="title mb-4 text-xl">Posts</h2>
-			<ul class="space-y-4">
-				{
-					allPostsByDate.map((p) => (
-						<li class="flex flex-col gap-x-2 sm:flex-row">
-							<PostPreview post={p} />
-						</li>
-					))
-				}
-			</ul>
+			<div class="blur-load">
+				<h2 class="title mb-4 text-xl">Posts</h2>
+			</div>
+			<div class="blur-load">
+				<ul class="space-y-4">
+					{
+						allPostsByDate.map((p) => (
+							<li class="flex flex-col gap-x-2 sm:flex-row">
+								<PostPreview post={p} />
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
+		<section aria-label="Must Read" class="mt-16">
+			<div class="blur-load">
+				<h2 class="title mb-4 text-xl">Must Read</h2>
+			</div>
+			<div class="blur-load">
+				<ul class="space-y-2">
+					<li>
+						<a class="cactus-link" href="https://cdixon.org/2009/09/19/climbing-the-wrong-hill rel="noopener noreferrer" target="_blank">cdixon - Climbing the wrong hill</a>
+					</li>
+					<!-- Add more links as needed -->
+				</ul>
+			</div>
 		</section>
 	</div>
 </PageLayout>
