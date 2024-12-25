@@ -19,7 +19,7 @@ My younger version(teenage) would be really proud that I have this watch. It's t
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 - <span class="cactus-link bg-[rgba(110,233,57,0.31)] dark:bg-[rgba(81,241,12,0.177)]">Theoretical unlimited battery life</span>.
-- Can be calibrated and tracked via <span class="cactus-link bg-[rgba(110,233,57,0.31)] dark:bg-[rgba(81,241,12,0.177)]">Bluetooth</span> from your phone.
+- Can be calibrated and tracked via the <span class="cactus-link bg-[rgba(110,233,57,0.31)] dark:bg-[rgba(81,241,12,0.177)]">Bluetooth</span> from your phone.
 - Doesn't bother you like smartwatches with <span class="cactus-link bg-[rgba(110,233,57,0.31)] dark:bg-[rgba(81,241,12,0.177)]">jam-spamming notifications</span>.
 - <span class="cactus-link bg-[rgba(110,233,57,0.31)] dark:bg-[rgba(81,241,12,0.177)]">Solar-powered</span> with a white receptive screen (was this even possible?).
 - Have a <span class="cactus-link bg-[rgba(110,233,57,0.31)] dark:bg-[rgba(81,241,12,0.177)]">world clock</span> with any cities you like.
