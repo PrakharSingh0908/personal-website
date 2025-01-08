@@ -4,6 +4,7 @@ import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
 import 'rough-notation/lib/rough-notation.iife.js';
+import BentoGrid from "@/components/BentoGrid.astro";
 
 
 const MAX_POSTS = 10;
@@ -124,16 +125,22 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		</section>
 		<section aria-label="Must Read" class="mt-16">
 			<div class="blur-load">
-				<h2 class="title mb-4 text-xl">Must Read</h2>
+				<h2 class="title mb-4 text-xl">Must Read/Listen</h2>
 			</div>
 			<div class="blur-load">
 				<ul class="space-y-2">
 					<li>
-						<a class="cactus-link" href="https://cdixon.org/2009/09/19/climbing-the-wrong-hill rel="noopener noreferrer" target="_blank">cdixon - Climbing the wrong hill</a>
+						<a class="cactus-link" href="https://www.youtube.com/watch?v=F9cO3-MLHOM rel=" target="_blank">Bill Gurley presents 2,851 Miles</a>
+					</li>
+					<li>
+						<a class="cactus-link" href="https://cdixon.org/2009/09/19/climbing-the-wrong-hill" target="_blank">Climbing the wrong hill</a>
 					</li>
 					<!-- Add more links as needed -->
 				</ul>
 			</div>
 		</section>
+		<!-- <section aria-label="Bento Grid" class="mt-16">
+			<BentoGrid />
+		</section> -->
 	</div>
 </PageLayout>

@@ -1,0 +1,45 @@
+---
+const items = [
+    { title: "Item 1", content: "Content for item 1", width: 1, height: 1 },
+    { title: "Item 2", content: "Content for item 2", width: 2, height: 1 },
+    { title: "Item 3", content: "Content for item 3", width: 1, height: 2 },
+    { title: "Item 4", content: "Content for item 4", width: 1, height: 1 },
+    // Add more items as needed
+];
+---
+
+<style>
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .bento-item {
+    background: #f0f0f0;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Set the width and height based on item properties */
+  }
+  .bento-item[data-width="1"] {
+    grid-column: span 1;
+  }
+  .bento-item[data-width="2"] {
+    grid-column: span 2;
+  }
+  .bento-item[data-height="1"] {
+    height: 100px; /* Adjust height as needed */
+  }
+  .bento-item[data-height="2"] {
+    height: 200px; /* Adjust height as needed */
+  }
+</style>
+
+<div class="bento-grid">
+  {items.map(item => (
+    <div class="bento-item" data-width={item.width} data-height={item.height}>
+      <h3>{item.title}</h3>
+      <p>{item.content}</p>
+    </div>
+  ))}
+</div> 
