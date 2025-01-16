@@ -4,7 +4,6 @@ import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
 import 'rough-notation/lib/rough-notation.iife.js';
-import BentoGrid from "@/components/BentoGrid.astro";
 
 
 const MAX_POSTS = 10;
@@ -35,7 +34,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
   </style>
 
 <PageLayout meta={{ title: "Home" }}>
-	<div class="mx-auto max-w-4xl sm:p-6 sm:border sm:border-neutral-400/20 sm:rounded-lg sm:shadow-md">
+		<section class="blur-load">
+			<img src="lky.jpg" alt="Description of the image" class="your-image-class w-full h-[200px] rounded-t-lg object-cover" />
+		</section>
+	<div class="mx-auto max-w-4xl sm:p-6 sm:border sm:border-neutral-400/20 sm:rounded-b-lg mt-5 md:mt-0">
 		<section class="blur-load">
 			<h1 class="title mb-6 text-xl">नमस्ते / Hello</h1>
 			<p class="mb-4">
@@ -130,10 +132,22 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			<div class="blur-load">
 				<ul class="space-y-2">
 					<li>
-						<a class="cactus-link" href="https://www.youtube.com/watch?v=F9cO3-MLHOM rel=" target="_blank">Bill Gurley presents 2,851 Miles</a>
+						<div class="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center w-full">
+							<a class="cactus-link" href="https://www.youtube.com/watch?v=F9cO3-MLHOM rel=" target="_blank">Bill Gurley presents 2,851 Miles</a>
+							<div class="text-textColor/60 mt-1 sm:mt-0">All-In Summit</div>
+						</div>
 					</li>
 					<li>
-						<a class="cactus-link" href="https://cdixon.org/2009/09/19/climbing-the-wrong-hill" target="_blank">Climbing the wrong hill</a>
+						<div class="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center w-full">
+							<a class="cactus-link" href="https://cdixon.org/2009/09/19/climbing-the-wrong-hill" target="_blank">Climbing the wrong hill</a>
+							<div class="text-textColor/60 mt-1 sm:mt-0">cdixon.eth</div>
+						</div>
+					</li>
+					<li>
+						<div class="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center w-full">
+							<a class="cactus-link" href="https://www.youtube.com/watch?v=7TKiJcNzC44&pp=ygULcmFqaXYgYmFqYWo%3D" target="_blank">If I Knew Then, What I Know Now</a>
+							<div class="text-textColor/60 mt-1 sm:mt-0">Rajiv Bajaj, Bajaj Auto</div>
+						</div>
 					</li>
 					<!-- Add more links as needed -->
 				</ul>
