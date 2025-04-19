@@ -1,6 +1,6 @@
 ---
 title: "Linear Thinking vs. Exponential Thinking"
-description: "How to win exponentialy big even when you are not very lucky?"
+description: "How to win exponentially big even when you are not very lucky?"
 publishDate: "20 January 2025"
 tags: ["philosophy", "luck", "thinking"]
 updatedDate: "20 January 2025"
